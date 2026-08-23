@@ -6,6 +6,7 @@ const translations = {
     nav_research: "Pesquisa",
     nav_people: "Membros",
     nav_publications: "Publicações",
+    nav_partners: "Parceiros",
     nav_philosophy: "Filosofia",
     nav_contact: "Contato",
     
@@ -51,6 +52,16 @@ const translations = {
     contact_desc: "Estamos sempre em busca de talentos motivados para integrar nossa equipe. Se você tem interesse em pós-graduação, iniciação científica ou pós-doutorado nas áreas de neurociência, proteômica ou terapia gênica, envie-nos uma mensagem.",
     contact_address: "Instituto de Ciências Biomédicas / ICB - USP, São Paulo, Brasil",
     
+    partners_title: "Parceiros & Colaboradores",
+    partners_subtitle: "Rede de colaboração científica do LIDE Lab com instituições brasileiras e internacionais.",
+    partners_group_brazil: "Brasil",
+    partners_group_intl: "Internacional",
+    partner_lopes_role: "Pesquisadora Colaboradora — Neurobiologia & Células-Tronco",
+    partner_britto_role: "Pesquisador Associado — Neuroplasticidade & Fisiopatologia Celular",
+    partner_guilherme_role: "Bioinformata — Proteômica & Biologia de Sistemas",
+    partner_marchetto_role: "Colaboradora Internacional Sênior — iPSCs & Modelos de TEA",
+    partner_parra_role: "Pesquisador Associado Internacional — Engenharia Genômica & AAV",
+
     form_name: "Nome",
     form_email: "E-mail",
     form_message: "Mensagem",
@@ -62,6 +73,7 @@ const translations = {
     nav_research: "Research",
     nav_people: "People",
     nav_publications: "Publications",
+    nav_partners: "Partners",
     nav_philosophy: "Philosophy",
     nav_contact: "Contact",
     
@@ -107,6 +119,16 @@ const translations = {
     contact_desc: "We are always looking for motivated talents to join our team. If you are interested in graduate studies, undergraduate research, or postdocs in neuroscience, proteomics, or gene therapy, please reach out.",
     contact_address: "Institute of Biomedical Sciences / ICB - USP, São Paulo, Brazil",
     
+    partners_title: "Partners & Collaborators",
+    partners_subtitle: "Scientific collaboration network of LIDE Lab with Brazilian and international institutions.",
+    partners_group_brazil: "Brazil",
+    partners_group_intl: "International",
+    partner_lopes_role: "Collaborating Researcher — Neurobiology & Stem Cells",
+    partner_britto_role: "Associate Researcher — Neuroplasticity & Cellular Pathophysiology",
+    partner_guilherme_role: "Bioinformatician — Proteomics & Systems Biology",
+    partner_marchetto_role: "Senior International Collaborator — iPSCs & ASD Models",
+    partner_parra_role: "International Associate Researcher — Genomic Engineering & AAV",
+
     form_name: "Name",
     form_email: "Email",
     form_message: "Message",
