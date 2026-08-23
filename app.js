@@ -216,6 +216,47 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// Contact Form — Formspree async submit
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = currentLanguage === 'pt' ? 'Enviando…' : 'Sending…';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formStatus.className = 'form-status success';
+        formStatus.textContent = currentLanguage === 'pt'
+          ? '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.'
+          : '✓ Message sent successfully! We will get back to you soon.';
+        contactForm.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      formStatus.className = 'form-status error';
+      formStatus.textContent = currentLanguage === 'pt'
+        ? '✗ Erro ao enviar. Tente novamente ou envie para vecereda@gmail.com.'
+        : '✗ Failed to send. Please try again or email vecereda@gmail.com.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = translations[currentLanguage].form_submit;
+    }
+  });
+}
+
 // Mobile menu toggle
 const menuToggle = document.querySelector(".mobile-menu-toggle");
 const navLinks = document.querySelector(".nav-links");

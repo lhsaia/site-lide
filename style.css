@@ -790,6 +790,26 @@ section {
   box-shadow: 0 0 0 3px rgba(72, 203, 197, 0.2);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(192, 242, 243, 0.45);
+  font-style: italic;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  min-height: 1.4em;
+}
+
+.form-status.success {
+  color: var(--accent-cyan);
+}
+
+.form-status.error {
+  color: #f87171;
+}
+
 /* Footer */
 footer {
   background-color: #032427;
