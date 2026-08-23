@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laboratório de Pesquisa Científica de Ponta - Estudos em Biologia e Saúde.">
+  <title>LIDE | Laboratório de Pesquisa</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons for modern aesthetic -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Glassmorphic Header -->
+  <header>
+    <div class="logo-container">
+      <img src="logo_white.png" alt="LIDE Logo" class="logo-img">
+      <div class="logo-text" data-i18n="nav_logo_text">Laboratório de Investigação em Desenvolvimento e Edição</div>
+    </div>
+    
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" class="active" data-i18n="nav_home">Início</a></li>
+        <li><a href="#research" data-i18n="nav_research">Pesquisa</a></li>
+        <li><a href="#people" data-i18n="nav_people">Membros</a></li>
+        <li><a href="#publications" data-i18n="nav_publications">Publicações</a></li>
+        <li><a href="#philosophy" data-i18n="nav_philosophy">Filosofia</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contato</a></li>
+      </ul>
+      
+      <div class="lang-selector">
+        <button class="lang-btn active" id="btn-pt">PT</button>
+        <button class="lang-btn" id="btn-en">EN</button>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="section-container hero-grid">
+      <div class="hero-content">
+        <h1 data-i18n="hero_title">Desvendando os Mistérios da <span>Biologia Celular</span></h1>
+        <p data-i18n="hero_desc">No LIDE Lab, dedicamos nossos esforços à pesquisa científica avançada, combinando técnicas inovadoras e biologia molecular para compreender as bases de patologias complexas e promover descobertas translacionais.</p>
+        <div class="cta-buttons">
+          <a href="#research" class="btn btn-primary" data-i18n="hero_cta_primary">Nossa Pesquisa</a>
+          <a href="#contact" class="btn btn-secondary" data-i18n="hero_cta_secondary">Contato / Vagas</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <!-- Stock image representing cell research -->
+        <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&q=80&w=800" alt="Pesquisa Científica" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section id="research" class="research">
+    <div class="section-container">
+      <h2 class="section-title" data-i18n="research_title">Linhas de Pesquisa</h2>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon"><i class="fas fa-dna"></i></div>
+          <h3 data-i18n="research_1_title">Genômica e Edição Gênica</h3>
+          <p data-i18n="research_1_desc">Estudo detalhado de variantes genéticas e aplicação de ferramentas modernas como CRISPR-Cas9 para modelagem de condições e correção de alterações em linhagens celulares.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon"><i class="fas fa-brain"></i></div>
+          <h3 data-i18n="research_2_title">Diferenciação Celular & Organoides</h3>
+          <p data-i18n="research_2_desc">Cultivo tridimensional de tecidos e estudos em células-tronco pluripotentes induzidas (iPSCs) para desvendar processos biológicos complexos in vitro.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon"><i class="fas fa-microscope"></i></div>
+          <h3 data-i18n="research_3_title">Mapeamento de Vias de Sinalização</h3>
+          <p data-i18n="research_3_desc">Investigação da interação receptor-ligante em células do sistema imune e nervoso, identificando potenciais alvos terapêuticos inovadores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- People Section -->
+  <section id="people" class="people">
+    <div class="section-container">
+      <h2 class="section-title" data-i18n="people_title">Nossa Equipe</h2>
+      <div class="people-grid">
+        <div class="person-card">
+          <div class="person-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Investigadora Principal">
+          </div>
+          <h3 data-i18n="people_pi_name">Dra. Veronica Aparecida Monteiro Saia-Cereda</h3>
+          <div class="person-role" data-i18n="people_pi_role">Investigadora Principal</div>
+          <p class="person-bio" data-i18n="people_pi_bio">Professora Adjunta e pesquisadora líder focada no desenvolvimento de novos biomarcadores e medicina regenerativa.</p>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Pesquisador 1">
+          </div>
+          <h3 data-i18n="people_member1_name">Dra. Pesquisadora Colaboradora</h3>
+          <div class="person-role" data-i18n="people_member1_role">Pós-Doutoranda</div>
+          <p class="person-bio" data-i18n="people_member1_bio">Especialista em bioinformática e análise de transcriptômica de célula única (single-cell RNA-seq).</p>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" alt="Pesquisador 2">
+          </div>
+          <h3 data-i18n="people_member2_name">Dr. Pesquisador Doutorando</h3>
+          <div class="person-role" data-i18n="people_member2_role">Doutorando</div>
+          <p class="person-bio" data-i18n="people_member2_bio">Pesquisador focado na caracterização e modulação de organoides cerebrais humanos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="publications">
+    <div class="section-container">
+      <h2 class="section-title" data-i18n="publications_title">Publicações Recentes</h2>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-year">2026</div>
+          <div class="pub-details">
+            <h3 data-i18n="pub_1_title">Análise de Redes Regulatórias em Modelos Tridimensionais de Tecido Humano</h3>
+            <p class="pub-authors">Silva, A. B., Santos, F., & <strong data-i18n="people_pi_last_name">Saia-Cereda</strong></p>
+            <p class="pub-journal">Nature Communications</p>
+            <div class="pub-links">
+              <a href="#" class="pub-link">PubMed</a>
+              <a href="#" class="pub-link">DOI</a>
+            </div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-year">2025</div>
+          <div class="pub-details">
+            <h3 data-i18n="pub_2_title">Aplicações Clínicas de iPSCs na Triagem de Compostos Neuroprotetores</h3>
+            <p class="pub-authors">Oliveira, M. L., & <strong data-i18n="people_pi_last_name">Saia-Cereda</strong></p>
+            <p class="pub-journal">Frontiers in Cellular Neuroscience</p>
+            <div class="pub-links">
+              <a href="#" class="pub-link">PubMed</a>
+              <a href="#" class="pub-link">DOI</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="philosophy">
+    <div class="section-container">
+      <h2 class="section-title" data-i18n="philosophy_title">Filosofia & Valores</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <h3 data-i18n="philo_1_title">Integridade Científica</h3>
+          <p data-i18n="philo_1_desc">Conduzimos nossa pesquisa com o mais alto padrão ético, transparência metodológica e reprodutibilidade de dados.</p>
+        </div>
+        <div class="philosophy-card">
+          <h3 data-i18n="philo_2_title">Diversidade e Colaboração</h3>
+          <p data-i18n="philo_2_desc">Acreditamos que o avanço da ciência é impulsionado por equipes multidisciplinares e perspectivas diversas no ambiente acadêmico.</p>
+        </div>
+        <div class="philosophy-card">
+          <h3 data-i18n="philo_3_title">Mentoria Ativa</h3>
+          <p data-i18n="philo_3_desc">Nossos estudantes e bolsistas recebem treinamento individualizado para que alcancem independência científica de excelência.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Join Us Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-container contact-grid">
+      <div class="contact-info">
+        <div class="contact-text">
+          <h2 class="section-title" data-i18n="contact_title">Contato & Oportunidades</h2>
+          <h3 data-i18n="contact_subtitle">Junte-se ao nosso Laboratório</h3>
+          <p data-i18n="contact_desc">Estamos sempre em busca de talentos motivados para integrar nossa equipe. Se você tem interesse em pós-graduação, iniciação científica ou pós-doutorado, envie-nos uma mensagem ou e-mail.</p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <i class="fas fa-envelope"></i>
+            <span>contato@lidelab.org</span>
+          </div>
+          <div class="contact-detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span data-i18n="contact_address">Universidade Federal / Instituto de Ciências Biológicas - Bloco D, Sala 102</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        <form class="contact-form" action="#" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! / Message sent successfully!');">
+          <div class="form-group">
+            <label for="name" data-i18n="form_name">Nome</label>
+            <input type="text" id="name" required placeholder="Seu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="form_email">E-mail</label>
+            <input type="email" id="email" required placeholder="seuemail@exemplo.com">
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form_message">Mensagem</label>
+            <textarea id="message" rows="5" required placeholder="Como podemos ajudar você?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;" data-i18n="form_submit">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">LIDE</div>
+      <div>&copy; 2026 LIDE. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
