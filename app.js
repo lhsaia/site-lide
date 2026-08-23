@@ -10,8 +10,8 @@ const translations = {
     nav_philosophy: "Filosofia",
     nav_contact: "Contato",
     
-    hero_title: "Desvendando os Mistérios da <span>Biologia Celular</span>",
-    hero_desc: "No LIDE, dedicamos nossos esforços à pesquisa científica avançada, combinando técnicas inovadoras e biologia molecular para compreender as bases de patologias complexas e promover descobertas translacionais.",
+    hero_title: "Do Proteoma à Terapia: a Ciência Translacional no <span>Autismo</span>",
+    hero_desc: "No LIDE Lab, investigamos os mecanismos moleculares do Transtorno do Espectro Autista (TEA) por meio de um fluxo translacional estruturado — da descoberta proteômica à validação terapêutica — utilizando iPSCs, CRISPR e vetores virais (AAV).",
     hero_cta_primary: "Nossa Pesquisa",
     hero_cta_secondary: "Contato / Vagas",
     
@@ -39,6 +39,16 @@ const translations = {
     pub_2_title: "Proteômica Translacional no Transtorno do Espectro Autista: do Mapeamento Molecular à Validação Terapêutica",
     people_pi_last_name: "Saia-Cereda",
     
+    partners_title: "Parceiros & Colaboradores",
+    partners_subtitle: "Rede de colaboração científica do LIDE Lab com instituições brasileiras e internacionais.",
+    partners_group_brazil: "Brasil",
+    partners_group_intl: "Internacional",
+    partner_lopes_role: "Pesquisadora Colaboradora — Neurobiologia & Células-Tronco",
+    partner_britto_role: "Pesquisador Associado — Neuroplasticidade & Fisiopatologia Celular",
+    partner_guilherme_role: "Bioinformata — Proteômica & Biologia de Sistemas",
+    partner_marchetto_role: "Colaboradora Internacional Sênior — iPSCs & Modelos de TEA",
+    partner_parra_role: "Pesquisador Associado Internacional — Engenharia Genômica & AAV",
+    
     philosophy_title: "Filosofia & Valores",
     philo_1_title: "Ciência Translacional",
     philo_1_desc: "Conectamos descoberta básica e aplicação clínica em um fluxo estruturado: da proteômica exploratória à validação terapêutica em modelos humanos 3D.",
@@ -52,16 +62,6 @@ const translations = {
     contact_desc: "Estamos sempre em busca de talentos motivados para integrar nossa equipe. Se você tem interesse em pós-graduação, iniciação científica ou pós-doutorado nas áreas de neurociência, proteômica ou terapia gênica, envie-nos uma mensagem.",
     contact_address: "Instituto de Ciências Biomédicas / ICB - USP, São Paulo, Brasil",
     
-    partners_title: "Parceiros & Colaboradores",
-    partners_subtitle: "Rede de colaboração científica do LIDE Lab com instituições brasileiras e internacionais.",
-    partners_group_brazil: "Brasil",
-    partners_group_intl: "Internacional",
-    partner_lopes_role: "Pesquisadora Colaboradora — Neurobiologia & Células-Tronco",
-    partner_britto_role: "Pesquisador Associado — Neuroplasticidade & Fisiopatologia Celular",
-    partner_guilherme_role: "Bioinformata — Proteômica & Biologia de Sistemas",
-    partner_marchetto_role: "Colaboradora Internacional Sênior — iPSCs & Modelos de TEA",
-    partner_parra_role: "Pesquisador Associado Internacional — Engenharia Genômica & AAV",
-
     form_name: "Nome",
     form_email: "E-mail",
     form_message: "Mensagem",
@@ -106,6 +106,16 @@ const translations = {
     pub_2_title: "Translational Proteomics in Autism Spectrum Disorder: from Molecular Mapping to Therapeutic Validation",
     people_pi_last_name: "Saia-Cereda",
     
+    partners_title: "Partners & Collaborators",
+    partners_subtitle: "Scientific collaboration network of LIDE Lab with Brazilian and international institutions.",
+    partners_group_brazil: "Brazil",
+    partners_group_intl: "International",
+    partner_lopes_role: "Collaborating Researcher — Neurobiology & Stem Cells",
+    partner_britto_role: "Associate Researcher — Neuroplasticidade & Cellular Pathophysiology",
+    partner_guilherme_role: "Bioinformatician — Proteomics & Systems Biology",
+    partner_marchetto_role: "Senior International Collaborator — iPSCs & ASD Models",
+    partner_parra_role: "International Associate Researcher — Genomic Engineering & AAV",
+    
     philosophy_title: "Philosophy & Values",
     philo_1_title: "Translational Science",
     philo_1_desc: "We bridge basic discovery and clinical application in a structured pipeline: from exploratory proteomics to therapeutic validation in human 3D models.",
@@ -119,16 +129,6 @@ const translations = {
     contact_desc: "We are always looking for motivated talents to join our team. If you are interested in graduate studies, undergraduate research, or postdocs in neuroscience, proteomics, or gene therapy, please reach out.",
     contact_address: "Institute of Biomedical Sciences / ICB - USP, São Paulo, Brazil",
     
-    partners_title: "Partners & Collaborators",
-    partners_subtitle: "Scientific collaboration network of LIDE Lab with Brazilian and international institutions.",
-    partners_group_brazil: "Brazil",
-    partners_group_intl: "International",
-    partner_lopes_role: "Collaborating Researcher — Neurobiology & Stem Cells",
-    partner_britto_role: "Associate Researcher — Neuroplasticity & Cellular Pathophysiology",
-    partner_guilherme_role: "Bioinformatician — Proteomics & Systems Biology",
-    partner_marchetto_role: "Senior International Collaborator — iPSCs & ASD Models",
-    partner_parra_role: "International Associate Researcher — Genomic Engineering & AAV",
-
     form_name: "Name",
     form_email: "Email",
     form_message: "Message",
@@ -156,14 +156,11 @@ let currentLanguage = "pt";
 function setLanguage(lang) {
   currentLanguage = lang;
   
-  // Set Lang attribute of html tag
   document.documentElement.lang = lang;
   
-  // Translate elements with data-i18n attribute
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
-    if (translations[lang][key]) {
-      // Check if translation contains HTML elements (like <span> in title)
+    if (translations[lang] && translations[lang][key]) {
       if (translations[lang][key].includes("<span")) {
         element.innerHTML = translations[lang][key];
       } else {
@@ -172,7 +169,6 @@ function setLanguage(lang) {
     }
   });
 
-  // Translate placeholders
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const messageInput = document.getElementById("message");
@@ -181,20 +177,23 @@ function setLanguage(lang) {
   if (emailInput) emailInput.placeholder = inputPlaceholders[lang].email;
   if (messageInput) messageInput.placeholder = inputPlaceholders[lang].message;
 
-  // Toggle active class on lang buttons
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.remove("active");
   });
-  document.getElementById(`btn-${lang}`).classList.add("active");
+  const activeBtn = document.getElementById(tn-);
+  if (activeBtn) activeBtn.classList.add("active");
 }
 
 // Event Listeners for Languages
-document.getElementById("btn-pt").addEventListener("click", () => setLanguage("pt"));
-document.getElementById("btn-en").addEventListener("click", () => setLanguage("en"));
+const btnPt = document.getElementById("btn-pt");
+const btnEn = document.getElementById("btn-en");
+if (btnPt) btnPt.addEventListener("click", () => setLanguage("pt"));
+if (btnEn) btnEn.addEventListener("click", () => setLanguage("en"));
 
 // Header scroll effect
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
+  if (!header) return;
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
@@ -208,54 +207,13 @@ window.addEventListener("scroll", () => {
       const currentId = section.getAttribute("id");
       document.querySelectorAll(".nav-links a").forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === `#${currentId}`) {
+        if (link.getAttribute("href") === #) {
           link.classList.add("active");
         }
       });
     }
   });
 });
-
-// Contact Form — Formspree async submit
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-
-if (contactForm && formStatus) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = currentLanguage === 'pt' ? 'Enviando…' : 'Sending…';
-    formStatus.className = 'form-status';
-    formStatus.textContent = '';
-
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        formStatus.className = 'form-status success';
-        formStatus.textContent = currentLanguage === 'pt'
-          ? '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.'
-          : '✓ Message sent successfully! We will get back to you soon.';
-        contactForm.reset();
-      } else {
-        throw new Error('Server error');
-      }
-    } catch {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = currentLanguage === 'pt'
-        ? '✗ Erro ao enviar. Tente novamente ou envie para vecereda@gmail.com.'
-        : '✗ Failed to send. Please try again or email vecereda@gmail.com.';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = translations[currentLanguage].form_submit;
-    }
-  });
-}
 
 // Mobile menu toggle
 const menuToggle = document.querySelector(".mobile-menu-toggle");
@@ -272,11 +230,63 @@ if (menuToggle && navLinks) {
     }
   });
 
-  // Close menu when a link is clicked
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
-      menuToggle.querySelector("i").className = "fas fa-bars";
+      const icon = menuToggle.querySelector("i");
+      if (icon) icon.className = "fas fa-bars";
     });
+  });
+}
+
+// Contact Form — Formspree async submit
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = currentLanguage === 'pt' ? 'Enviando...' : 'Sending...';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        formStatus.className = 'form-status success';
+        formStatus.textContent = currentLanguage === 'pt'
+          ? '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.'
+          : '✓ Message sent successfully! We will get back to you soon.';
+        contactForm.reset();
+      } else {
+        const data = await response.json().catch(() => ({}));
+        if (data && data.errors && data.errors.length > 0) {
+          formStatus.className = 'form-status error';
+          formStatus.textContent = data.errors.map(err => err.message).join(', ');
+        } else {
+          throw new Error('Falha no envio');
+        }
+      }
+    } catch (err) {
+      console.error('Form submit error:', err);
+      formStatus.className = 'form-status error';
+      formStatus.textContent = currentLanguage === 'pt'
+        ? '✗ Não foi possível enviar pelo formulário. Por favor, envie diretamente para vecereda@gmail.com'
+        : '✗ Could not send through the form. Please email directly to vecereda@gmail.com';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = translations[currentLanguage].form_submit;
+    }
   });
 }
