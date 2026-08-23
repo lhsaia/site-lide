@@ -263,20 +263,24 @@ if (contactForm && formStatus) {
         }
       });
 
-      if (response.ok) {
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (jsonErr) {
+        // Response might not be JSON
+      }
+
+      if (response.ok || response.status === 200 || data.ok) {
         formStatus.className = 'form-status success';
         formStatus.textContent = currentLanguage === 'pt'
           ? '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.'
           : '✓ Message sent successfully! We will get back to you soon.';
         contactForm.reset();
+      } else if (data.errors && data.errors.length > 0) {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = data.errors.map(err => err.message).join(', ');
       } else {
-        const data = await response.json().catch(() => ({}));
-        if (data && data.errors && data.errors.length > 0) {
-          formStatus.className = 'form-status error';
-          formStatus.textContent = data.errors.map(err => err.message).join(', ');
-        } else {
-          throw new Error('Falha no envio');
-        }
+        throw new Error('Erro na resposta do servidor');
       }
     } catch (err) {
       console.error('Form submit error:', err);
