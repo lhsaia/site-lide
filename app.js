@@ -180,7 +180,7 @@ function setLanguage(lang) {
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.remove("active");
   });
-  const activeBtn = document.getElementById(tn-);
+  const activeBtn = document.getElementById(`btn-${lang}`);
   if (activeBtn) activeBtn.classList.add("active");
 }
 
@@ -207,7 +207,7 @@ window.addEventListener("scroll", () => {
       const currentId = section.getAttribute("id");
       document.querySelectorAll(".nav-links a").forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href") === #) {
+        if (link.getAttribute("href") === `#${currentId}`) {
           link.classList.add("active");
         }
       });
@@ -220,7 +220,8 @@ const menuToggle = document.querySelector(".mobile-menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     navLinks.classList.toggle("active");
     const icon = menuToggle.querySelector("i");
     if (navLinks.classList.contains("active")) {
@@ -236,6 +237,15 @@ if (menuToggle && navLinks) {
       const icon = menuToggle.querySelector("i");
       if (icon) icon.className = "fas fa-bars";
     });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (navLinks.classList.contains("active") && !navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+      navLinks.classList.remove("active");
+      const icon = menuToggle.querySelector("i");
+      if (icon) icon.className = "fas fa-bars";
+    }
   });
 }
 
