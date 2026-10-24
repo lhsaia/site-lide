@@ -37,8 +37,8 @@ const translations = {
     publications_title: "Publicações Recentes",
     pub_1_title: "Human AUTS2 regulates neurodevelopmental pathways via dual DNA/RNA binding",
     pub_2_title: "Ciência Translacional no Autismo: da Assinatura Multi-ômica à Terapia Gênica",
-    pub_2_journal: "Proposta Jovem Pesquisador — FAPESP (Setembro/2026)",
-    pub_2_link: "PDF / Proposta",
+    pub_2_journal: "Proposta Jovem Pesquisador — FAPESP (em andamento)",
+    pub_2_link: "Em breve",
     people_pi_last_name: "Saia-Cereda",
     
     partners_title: "Parceiros & Colaboradores",
@@ -106,8 +106,8 @@ const translations = {
     publications_title: "Recent Publications",
     pub_1_title: "Human AUTS2 regulates neurodevelopmental pathways via dual DNA/RNA binding",
     pub_2_title: "Translational Science in ASD: From Multi-Omics Signatures to Gene Therapy",
-    pub_2_journal: "Young Investigator Proposal — FAPESP (September/2026)",
-    pub_2_link: "PDF / Proposal",
+    pub_2_journal: "Young Investigator Proposal — FAPESP (in progress)",
+    pub_2_link: "Coming soon",
     people_pi_last_name: "Saia-Cereda",
     
     partners_title: "Partners & Collaborators",
