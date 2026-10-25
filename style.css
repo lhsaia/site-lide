@@ -314,12 +314,27 @@ section {
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-image-protection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 /* Research Section */
