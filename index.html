@@ -20,7 +20,10 @@
   <!-- Glassmorphic Header -->
   <header>
     <div class="logo-container">
-      <img src="logo_white.png" alt="LIDE Logo" class="logo-img">
+      <div class="logo-img-wrapper" oncontextmenu="return false;">
+        <img src="logo_white.png" alt="LIDE Logo" class="logo-img" draggable="false" oncontextmenu="return false;">
+        <div class="logo-protection-overlay"></div>
+      </div>
       <div class="logo-text" data-i18n="nav_logo_text">Laboratório de Investigação em Desenvolvimento e Edição</div>
     </div>
     
