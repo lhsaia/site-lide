@@ -876,6 +876,35 @@ footer {
   color: var(--accent-cyan);
 }
 
+.footer-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+}
+
+.footer-separator {
+  color: rgba(248, 250, 252, 0.3);
+}
+
+.footer-author {
+  color: rgba(248, 250, 252, 0.7);
+}
+
+.footer-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
 /* =============================================
    RESPONSIVE DESIGN — Mobile-first approach
    Breakpoints: 480 · 768 · 1024
@@ -1148,6 +1177,10 @@ footer {
     flex-direction: column;
     gap: 0.75rem;
     text-align: center;
+  }
+
+  .footer-text {
+    justify-content: center;
   }
 }
 

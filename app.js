@@ -67,7 +67,8 @@ const translations = {
     form_name: "Nome",
     form_email: "E-mail",
     form_message: "Mensagem",
-    form_submit: "Enviar Mensagem"
+    form_submit: "Enviar Mensagem",
+    footer_developed_by: "Desenvolvido por"
   },
   en: {
     nav_logo_text: "Laboratory of Investigation in Development and Editing",
@@ -136,7 +137,8 @@ const translations = {
     form_name: "Name",
     form_email: "Email",
     form_message: "Message",
-    form_submit: "Send Message"
+    form_submit: "Send Message",
+    footer_developed_by: "Developed by"
   }
 };
 
